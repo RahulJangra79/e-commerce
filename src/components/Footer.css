@@ -1,0 +1,146 @@
+.footer-main {
+    background-color: #f2f2f2;
+    margin: 0;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allows columns to stack on smaller screens */
+    padding: 50px 10%; /* Adjusted padding for better responsiveness */
+    gap: 20px; /* Adds spacing between columns */
+  }
+  
+  .footer-column {
+    flex: 1 1 200px; /* Ensures columns are flexible */
+    min-width: 200px; /* Prevents columns from shrinking too much */
+    margin: 10px;
+    text-align: left;
+  }
+  
+  .footer-column h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+    /* font-size: 16px; */
+  }
+  
+  .footer-column ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .footer-column form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-column input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #f0b777;
+    font-size: 16px;
+    border-radius: 5px; /* Adds rounded corners */
+  }
+  
+  .footer-column label {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .footer-column button {
+    padding: 10px;
+    background-color: #525252;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .footer-column button:hover {
+    background-color: #333;
+  }
+  
+  .footer-copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e8e2e2;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* RESPONSIVE DESIGN */
+  
+  /* Medium screens (Tablets) */
+  @media (max-width: 768px) {
+    .footer {
+      padding: 30px 20px;
+    }
+  
+    .footer-column h4 {
+      font-size: 18px;
+    }
+  
+    .footer-column ul li a {
+      font-size: 16px;
+    }
+  
+    .footer-column input[type="email"] {
+      font-size: 14px;
+    }
+  
+    .footer-column button {
+      font-size: 14px;
+    }
+  }
+  
+  /* Small screens (Mobile) */
+  @media (max-width: 480px) {
+    .footer {
+      flex-direction: column; /* Stack columns vertically */
+      align-items: flex-start; /* Center align items */
+      text-align: center; /* Center text in columns */
+    }
+  
+    .footer-column {
+      width: 100%; /* Full width for each column */
+      max-width: 250px; /* Prevents too much stretching */      
+    }
+  
+    .footer-column h4 {
+      font-size: 16px;
+    }
+  
+    .footer-column ul li a {
+      font-size: 16px;
+    }
+  
+    .footer-column input[type="email"] {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .footer-column button {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .footer-copyright {
+      font-size: 12px;
+      padding: 15px;
+    }
+  }
+  

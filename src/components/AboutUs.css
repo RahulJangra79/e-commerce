@@ -1,0 +1,344 @@
+/* .aboutus-our-story {
+    background-color: #fff;
+    padding: 50px;
+}
+
+.aboutus-our-story h2 {
+    color: #333;
+    font-size: 56px;
+    font-family: courier;
+}
+
+.aboutus-our-story p {
+    font-size: 22px;
+    font-family: courier;
+    width: 50%;
+    justify-self: center;
+}
+
+.aboutus-our-story-images {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.aboutus-our-story-images img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease; 
+}
+
+.aboutus-our-story-images img:hover {
+    transform: scale(1.05); 
+}
+
+.aboutus-main {
+    overflow: hidden;
+    font-family: courier;
+}
+  
+.aboutus-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+    padding: 50px 150px;
+}
+
+.aboutus-image-container {
+    flex: 0.5;
+}
+
+.from-left {
+    animation: slideInLeft 1.5s ease-out forwards;
+    transform: translateX(-100%);
+}
+
+.from-right {
+    animation: slideInRight 1.5s ease-out forwards;
+    transform: translateX(100%);
+}
+
+.aboutus-image {
+    max-width: 100%;
+    height: 500px;
+    padding: 0 20px;
+}
+
+.aboutus-text-container {
+    flex: 1;
+    padding: 20px;
+}
+
+.aboutus-title {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.aboutus-subtitle,
+    .aboutus-description {
+    font-size: 20px;
+    color: #555;
+    opacity: 0;
+}
+
+.animated-line {
+    animation: fadeInLine 1s ease-out forwards;
+    animation-delay: calc(var(--line-order) * 0.5s);
+}
+
+.aboutus-subtitle {
+    --line-order: 1;
+}
+
+.aboutus-description {
+    --line-order: 2;
+}
+
+@keyframes slideInLeft {
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLine {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+@media (max-width: 768px) {
+  .aboutus-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .aboutus-image {
+    height: 250px;
+    padding: 0;
+  }
+
+  .aboutus-text-container {
+    padding: 10px;
+  }
+
+  .aboutus-title {
+    font-size: 28px;
+  }
+
+  .aboutus-subtitle,
+  .aboutus-description {
+    font-size: 18px;
+  }
+
+  .aboutus-our-story {
+    padding: 30px;
+  }
+
+  .aboutus-our-story h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .aboutus-our-story p {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .aboutus-our-story-images {
+    flex-direction: column;
+  }
+
+  .aboutus-our-story-images img {
+    height: auto;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+} */
+
+
+
+
+
+
+
+
+
+.aboutus-main {
+  font-family: courier;
+  overflow: hidden;
+}
+
+.aboutus-our-story {
+  background-color: #fff;
+  padding: 50px;
+  text-align: center;
+}
+
+.aboutus-our-story h2 {
+  color: #333;
+  font-size: 56px;
+}
+
+.aboutus-our-story p {
+  font-size: 22px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.aboutus-our-story-images {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.aboutus-our-story-images img {
+  height: 500px;
+  width: auto;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.aboutus-our-story-images img:hover {
+  transform: scale(1.05);
+}
+
+.aboutus-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 150px;
+  flex-wrap: wrap;
+  border-top: 1px solid gray;
+}
+
+.aboutus-image-container {
+  flex: 0.5;
+  opacity: 0;
+}
+
+.aboutus-text-container {
+  flex: 1;
+  padding: 20px;
+}
+
+.aboutus-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.aboutus-title {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.aboutus-subtitle,
+.aboutus-description {
+  font-size: 20px;
+  color: #555;
+  opacity: 0;
+}
+
+.animated-line {
+  animation: fadeInLine 1s ease-out forwards;
+}
+
+.aboutus-subtitle {
+  animation-delay: 0.2s;
+}
+
+.aboutus-description {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInLine {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation triggers on scroll */
+.hidden-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.animate-left {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 1s ease-out;
+}
+
+.hidden-right {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.animate-right {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 1s ease-out;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .aboutus-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .aboutus-image {
+    height: 250px;
+    padding: 0;
+  }
+
+  .aboutus-text-container {
+    padding: 10px;
+  }
+
+  .aboutus-title {
+    font-size: 28px;
+  }
+
+  .aboutus-subtitle,
+  .aboutus-description {
+    font-size: 18px;
+  }
+
+  .aboutus-our-story h2 {
+    font-size: 32px;
+  }
+
+  .aboutus-our-story p {
+    font-size: 18px;
+  }
+
+  .aboutus-our-story-images {
+    flex-direction: column;
+  }
+
+  .aboutus-our-story-images img {
+    height: auto;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}

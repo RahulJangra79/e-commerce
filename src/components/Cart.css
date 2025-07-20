@@ -1,0 +1,288 @@
+.cart-container {
+  display: flex;
+  gap: 30px;
+  padding: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.cart-items {
+  flex: 2;
+  padding-right: 20px;
+  border-right: 1px solid #ddd;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* margin-bottom: 20px; */
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item-image {
+  width: 100px;
+  height: 120px;
+}
+
+.cart-item-details {
+  flex: 1;
+  text-align: left;
+}
+
+.item-name {
+  font-weight: bold;
+}
+
+.item-price {
+  color: #666;
+}
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid grey;
+}
+
+.cart-item-quantity button {
+  padding: 5px 10px;
+  border: none;
+  background: white;
+  cursor: pointer;
+}
+
+.cart-item-quantity button:hover {
+  background: #ddd;
+}
+
+.item-total {
+  font-weight: bold;
+  width: 50px;
+}
+
+.remove-item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.remove-item:hover {
+  color: #ca3131f0;
+}
+
+.order-summary {
+  flex: 1;
+  /* padding-left: 20px; */
+  min-width: 250px;
+}
+
+.order-summary p {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+}
+
+.total {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.checkout-button {
+  font-size: 20px;
+  background-color: #ca3131f0;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.checkout-button:hover {
+  background-color: #962626f0;
+}
+
+
+
+/* Coupon Section */
+.coupon-section {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.coupon-section input {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.coupon-section button {
+  padding: 8px 20px;
+  background-color: #ca3131f0;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.coupon-section button:hover {
+  background-color: #962626f0;
+}
+
+.coupon-message {
+  margin-top: 5px;
+  font-size: 14px;
+  color: green;
+}
+
+@media (max-width: 850px) {
+  .cart-container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .cart-items {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .cart-item {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .item-name,
+  .item-price {
+    margin: 0;
+  }
+
+  .cart-item-image {
+    width: 50px;
+    height: 50px;
+    max-height: 200px;
+    object-fit: contain;
+  }
+
+  .cart-item-quantity {
+    margin: 10px 0;
+    justify-content: flex-start;
+  }
+
+  .cart-item-total {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  .remove-item {
+    align-self: center;
+  }
+
+  .order-summary {
+    padding-left: 0;
+  }
+
+  .order-summary p {
+    font-size: 16px;
+  }
+
+  .checkout-button {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .coupon-section {
+    margin-top: 50px;
+    align-items: stretch;
+  }
+
+  .coupon-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 425px) {
+  .cart-container{
+    padding: 0;
+  }
+
+  .cart-item-quantity {
+    gap: 4px;
+  }
+
+  .coupon-section {
+    margin-top: 50px;
+    align-items: stretch;
+  }
+
+  .coupon-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .coupon-section input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .coupon-section button {
+    flex-shrink: 0;
+    padding: 8px 20px;
+  }
+
+  .coupon-message {
+    flex-basis: 100%;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: green;
+    text-align: left;
+  }
+
+  .item-name,
+  .item-price {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .order-summary{
+    padding: 20px;
+  }
+}
+
+@media (max-width: 425px){
+  .item-name{
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  .item-total{
+    font-size: 12px;
+  }
+
+  .cart-item-quantity{
+    font-size: 12px;
+  }
+
+  .remove-item{
+    font-size: 12px;
+  }
+}

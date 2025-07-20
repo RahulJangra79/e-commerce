@@ -1,0 +1,149 @@
+.new-arrivals {
+    margin: 0;
+    background-color: #fff;
+}
+
+/* .new-arrivals-main {
+    background-color: rgb(238, 236, 235);
+    margin: 50px;
+    border-radius: 20px;
+    padding: 20px;
+} */
+
+.new-arrivals-text {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    font-size: 38px;
+    font-weight: 500;
+    text-align: center; /* Center the heading */
+    color: rgb(98, 98, 98);
+}
+
+.new-arrivals-products {
+    display: flex;
+    flex-wrap: wrap; /* Makes items wrap on smaller screens */
+    justify-content: center; /* Centers items */
+    gap: 30px; /* Adds spacing between items */
+    /* background-color: rgb(238, 236, 235); */
+    padding: 20px;
+}
+
+.new-arrivals-product {
+    flex: 1 1 calc(33.333% - 20px); /* Allows 3 products per row, accounting for gaps */
+    max-width: 350px; /* Prevents items from getting too large */
+    min-width: 250px; /* Ensures layout holds on smaller screens */
+    text-align: center; /* Center align product details */
+    background: #fff; /* White background for each product */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    overflow: hidden; /* Ensures image stays within bounds */
+    transition: transform 0.3s ease-in-out;
+}
+
+.new-arrivals-product:hover {
+    transform: scale(1.05); /* Enlarge on hover */
+}
+
+.new-arrivals-product img {
+    width: 100%;
+    height: 400px; /* Uniform image size */
+    object-fit: cover; /* Makes images look proportional */
+}
+
+.new-arrivals-product-name {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+.new-arrivals-product-price {
+    color: #6b6b6b;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.new-arrivals-products-shop-now-button {
+    padding: 12px 40px;
+    background-color: #525252;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 16px;
+    margin: 20px auto;
+    display: block; /* Centers button */
+    cursor: pointer;
+}
+.new-arrivals-products-shop-now-button a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.new-arrivals-products-shop-now-button:hover {
+    background-color: #333;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* For tablets and medium-sized screens */
+@media (max-width: 768px) {
+    .new-arrivals-text {
+        font-size: 28px;
+    }
+
+    .new-arrivals-product {
+        flex: 1 1 calc(50% - 20px); /* Displays 2 items per row */
+    }
+
+    .new-arrivals-product img {
+        height: 350px;
+    }
+
+    .new-arrivals-product-name {
+        font-size: 18px;
+        color: #333;
+        margin: 0px;
+    }
+    
+    .new-arrivals-product-price {
+        color: #6b6b6b;
+        font-size: 16px;
+        margin: 5px;
+    }
+}
+
+/* For mobile and small screens */
+@media (max-width: 480px) {
+    .new-arrivals-main {
+        margin: 20px; /* Reduces outer spacing */
+    }
+
+    .new-arrivals-text {
+        font-size: 24px;
+    }
+
+    .new-arrivals-product {
+        flex: 1 1 100%; /* Single item per row */
+        max-width: 100%; /* Prevents overflow */
+    }
+
+    .new-arrivals-product img {
+        height: 250px;
+    }
+
+    .new-arrivals-product-name {
+        font-size: 18px;
+        color: #333;
+        margin: 0px;
+    }
+    
+    .new-arrivals-product-price {
+        color: #6b6b6b;
+        font-size: 16px;
+        margin: 5px;
+    }
+
+    .new-arrivals-products-shop-now-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+}

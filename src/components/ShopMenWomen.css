@@ -1,0 +1,213 @@
+/* Main container */
+.shop-men-women-main {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    /* height: 600px;  */
+  }
+  
+  /* Slider container */
+  .shop-men-women-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Individual slide */
+  .shop-men-women-slide {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+  
+  .shop-men-women-slide img {
+    width: 55%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .shop-men-women-slide p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Navigation Buttons */
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5rem;
+  }
+  
+  .prev-button {
+    left: 20px;
+  }
+  
+  .next-button {
+    right: 20px;
+  }
+  
+  .nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+
+
+
+
+
+
+
+
+
+  /* Main container */
+.shop-men-women-main {
+  width: 100%;
+  overflow: hidden; /* Hides extra parts of slides */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slider container */
+.shop-men-women-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Smooth sliding */
+  width: 100%; /* Ensures the slider spans the full width */
+}
+
+/* Individual slide */
+.shop-men-women-slide {
+  flex: 0 0 100%; /* Each slide takes 100% of the width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.shop-men-women-slide img {
+  width: 50%; /* Default size for medium screens */
+  height: auto;
+  border-radius: 10px;
+}
+
+.shop-men-women-slide p {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Navigation Buttons */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1.5rem;
+}
+
+.prev-button {
+  left: 20px;
+}
+
+.next-button {
+  right: 20px;
+}
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Adjustments */
+
+/* Tablets and small desktops */
+@media (max-width: 1024px) {
+  .shop-men-women-slide img {
+    width: 60%; /* Slightly smaller images for tablets */
+  }
+
+  .shop-men-women-slide p {
+    font-size: 1.1em; /* Adjusted font size */
+  }
+
+  .nav-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem; /* Smaller buttons */
+  }
+}
+
+/* Mobile screens (768px and below) */
+@media (max-width: 768px) {
+  .shop-men-women-main {
+    flex-direction: column; /* Ensure content stacks vertically */
+  }
+
+  .shop-men-women-slide img {
+    width: 70%; /* Smaller image width for mobile */
+  }
+
+  .shop-men-women-slide p {
+    font-size: 1em; /* Smaller text */
+  }
+
+  .nav-button {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem; /* Smaller navigation buttons */
+  }
+}
+
+/* Extra small screens (480px and below) */
+@media (max-width: 480px) {
+  .shop-men-women-slide img {
+    width: 80%; /* Further reduce image size for small screens */
+  }
+
+  .shop-men-women-slide p {
+    font-size: 0.9em; /* Smaller text */
+  }
+
+  .nav-button {
+    width: 25px;
+    height: 25px;
+    font-size: 0.8rem; /* Smallest button size */
+  }
+
+  .prev-button {
+    left: 10px; /* Adjust button positions */
+  }
+
+  .next-button {
+    right: 10px;
+  }
+}

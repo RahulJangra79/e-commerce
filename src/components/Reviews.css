@@ -1,0 +1,129 @@
+.reviews {
+    margin: 0;
+    background-color: #e8e2e2;
+    padding: 20px 10px; /* Adjust padding for responsiveness */
+  }
+  
+  .reviews-carousel-main {
+    position: relative;
+    overflow: hidden; /* Ensure only one review is visible */
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto; /* Center carousel */
+    text-align: center;
+    background-color: #e8e2e2;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reviews-carousel-slider {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+    width: 100%; /* Fix potential layout issues */
+  }
+  
+  .review-slide {
+    flex: 0 0 100%; /* Each slide takes up exactly 100% of the container width */
+    padding: 30px 20px;
+    box-sizing: border-box; /* Ensure padding doesn't add extra width */
+  }
+  
+  .review-text {
+    font-size: 1.5rem; /* Readable font size */
+    font-style: italic;
+    color: #333;
+  }
+  
+  .review-author {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #7b7b7b;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.3s;
+  }
+  
+  .prev-button {
+    left: 20px;
+  }
+  
+  .next-button {
+    right: 20px;
+  }
+  
+  .nav-button:hover {
+    background: #555;
+  }
+  
+  /* RESPONSIVE DESIGN */
+  
+  /* Medium Screens (Tablets) */
+  @media (max-width: 768px) {
+    .reviews-carousel-main {
+      padding: 15px;
+      max-width: 90%;
+    }
+  
+    .review-text {
+      font-size: 1.2rem;
+    }
+  
+    .review-author {
+      font-size: 1rem;
+    }
+  
+    .nav-button {
+      padding: 8px;
+      font-size: 1rem;
+    }
+  
+    .prev-button {
+      left: 10px;
+    }
+  
+    .next-button {
+      right: 10px;
+    }
+  }
+  
+  /* Small Screens (Mobile) */
+  @media (max-width: 480px) {
+    .reviews-carousel-main {
+      padding: 10px;
+    }
+  
+    .review-text {
+      font-size: 1rem;
+    }
+  
+    .review-author {
+      font-size: 0.9rem;
+    }
+  
+    .nav-button {
+      padding: 6px;
+      font-size: 0.9rem;
+    }
+  
+    .prev-button {
+      left: 5px;
+    }
+  
+    .next-button {
+      right: 5px;
+    }
+  }
+  

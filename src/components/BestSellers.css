@@ -1,0 +1,122 @@
+.bestsellers-main {
+    background-color: rgb(238, 236, 235);
+    margin: 0;
+    padding: 20px;
+}
+
+.bestsellers-main-text {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px 20px 10px 20px;
+    font-size: 38px;
+    font-weight: 600;
+    text-align: center;
+    color: rgb(98, 98, 98);
+}
+
+.bestsellers-main-text p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 100;
+    color: rgb(92, 90, 89);
+}
+
+.bestsellers-top-products {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    justify-content: center; /* Center aligns items */
+    gap: 30px; /* Adds space between items */
+    margin: 20px 0;
+}
+
+.bestsellers-top-product {
+    flex: 1 1 calc(33.333% - 20px); /* Each item takes up 1/3 of the row, minus spacing */
+    max-width: 400px; /* Maximum width for larger screens */
+    min-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a light shadow */
+    background: #fff; /* White background for the product */
+    border-radius: 0px; /* Rounded corners */
+    overflow: hidden; /* Ensures content stays within bounds */
+    transition: transform 0.3s ease-in-out;
+}
+
+.bestsellers-top-product:hover {
+    transform: scale(1.05); /* Slightly enlarges the product on hover */
+}
+
+.bestsellers-top-product img {
+    height: 450px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.bestsellers-top-product-name {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+.bestsellers-top-product-price {
+    color: #6b6b6b;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.bestsellers-top-products-shop-now-button {
+    padding: 12px 40px;
+    background-color: #525252;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 16px;
+    margin: 30px auto 10px auto;
+    display: block;
+}
+
+.bestsellers-top-products-shop-now-button:hover {
+    background-color: #333;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+    .bestsellers-main-text {
+        font-size: 24px;
+    }
+
+    .bestsellers-main-text p {
+        font-size: 14px;
+    }
+
+    .bestsellers-top-product {
+        flex: 1 1 calc(50% - 20px); /* Each item takes up 50% of the row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .bestsellers-main-text {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .bestsellers-main-text p {
+        font-size: 16px;
+    }
+
+    .bestsellers-top-product {
+        flex: 1 1 100%; /* Each item takes up the full row on small screens */
+        max-width: 100%;
+    }
+
+    .bestsellers-top-product img {
+        height: 300px; /* Reduce image size for small screens */
+        object-fit: cover;
+    }
+
+    .bestsellers-top-products-shop-now-button {
+        font-size: 14px;
+        padding: 8px 20px;
+        cursor: pointer;
+    }
+}
