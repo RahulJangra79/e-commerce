@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Cart.css";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 import {
   collection,
   query,
@@ -18,6 +19,7 @@ const Cart = () => {
   const [coupon, setCoupon] = useState("");
   const [discount, setDiscount] = useState(0);
   const [couponMessage, setCouponMessage] = useState("");
+  const navigate = useNavigate();
 
   const validCoupons = {
     SAVE10: 10,
@@ -27,7 +29,10 @@ const Cart = () => {
   useEffect(() => {
     const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
       if (user) {
-        const q = query(collection(db, "cart"), where("userId", "==", user.uid));
+        const q = query(
+          collection(db, "cart"),
+          where("userId", "==", user.uid)
+        );
         const unsubscribeSnapshot = onSnapshot(q, (snapshot) => {
           const items = snapshot.docs.map((doc) => ({
             docId: doc.id,
@@ -43,6 +48,9 @@ const Cart = () => {
           icon: "warning",
           title: "Login Required",
           text: "Please login to view your cart.",
+          showConfirmButton: true,
+        }).then(() => {
+          navigate("/login");
         });
       }
     });
@@ -73,10 +81,13 @@ const Cart = () => {
   };
 
   const handleCheckout = () => {
-    Swal.fire({
-      icon: "error",
-      title: "Checkout Unavailable",
-      text: "Online orders aren't supported yet. Stay tuned!",
+    navigate("/checkout", {
+      state: {
+        total: total,
+        discount: discount,
+        coupon: coupon,
+        cartItems: cartItems,
+      },
     });
   };
 
@@ -100,14 +111,21 @@ const Cart = () => {
                 <p className="item-price">${Number(item.price).toFixed(2)}</p>
               </div>
               <div className="cart-item-quantity">
-                <button onClick={() => handleQuantityChange(item.docId, -1)}>-</button>
+                <button onClick={() => handleQuantityChange(item.docId, -1)}>
+                  -
+                </button>
                 <span>{item.quantity}</span>
-                <button onClick={() => handleQuantityChange(item.docId, 1)}>+</button>
+                <button onClick={() => handleQuantityChange(item.docId, 1)}>
+                  +
+                </button>
               </div>
               <p className="item-total">
                 ${(Number(item.price) * item.quantity).toFixed(2)}
               </p>
-              <button onClick={() => handleRemoveItem(item.docId)} className="remove-item">
+              <button
+                onClick={() => handleRemoveItem(item.docId)}
+                className="remove-item"
+              >
                 <i className="fa-solid fa-trash"></i>
               </button>
             </div>
@@ -130,11 +148,17 @@ const Cart = () => {
 
       <div className="order-summary">
         <h2>Order Summary</h2>
-        <p>Subtotal: <span>${subtotal.toFixed(2)}</span></p>
+        <p>
+          Subtotal: <span>${subtotal.toFixed(2)}</span>
+        </p>
         {discount > 0 && (
-          <p>Discount: <span>-${discountAmount.toFixed(2)}</span></p>
+          <p>
+            Discount: <span>-${discountAmount.toFixed(2)}</span>
+          </p>
         )}
-        <p>Delivery: <span>FREE</span></p>
+        <p>
+          Delivery: <span>FREE</span>
+        </p>
         <p className="total">
           <strong>Total: ${total.toFixed(2)}</strong>
         </p>

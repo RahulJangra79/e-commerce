@@ -10,6 +10,8 @@ import Cart from "./components/Cart";
 import ShopMen from "./components/ShopMen";
 import ShopWomen from "./components/ShopWomen";
 import AddProduct from "./components/AddProduct";
+import Checkout from "./components/Checkout";
+import ThankYou from "./components/ThankYou";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
 
           <Route path="/women" element={<ShopWomen />}></Route>
           <Route path="/addProduct" element={<AddProduct />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/thankyou" element={<ThankYou />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -16,6 +16,7 @@ function OurProducts() {
   const [ourproductProducts, setourproductProducts] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
   const [showFilter, setShowFilter] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
   const [filters, setFilters] = useState({
     category: "",
     size: "",
@@ -184,7 +185,12 @@ function OurProducts() {
       <div className="ourproduct-products">
         {ourproductProducts.map((product) => (
           <div className="ourproduct-product" key={product.id}>
-            <img src={product.img} alt={product.name} />
+            <img
+              src={product.img}
+              alt={product.name}
+              onClick={() => setSelectedImage(product.img)}
+              style={{ cursor: "zoom-in" }}
+            />
             <div className="ourproduct-product-details">
               <p className="ourproduct-product-name">{product.name}</p>
               <div className="ourproduct-product-details-price-size-cart">
@@ -289,6 +295,12 @@ function OurProducts() {
               RESET FILTERS
             </button>
           </div>
+        </div>
+      )}
+
+      {selectedImage && (
+        <div className="image-modal" onClick={() => setSelectedImage(null)}>
+          <img src={selectedImage} alt="Zoomed product" />
         </div>
       )}
     </div>

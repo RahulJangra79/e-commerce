@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import "./BestSellers.css";
+import './BestSellers.css';
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 
 function BestSellers() {
   const [bestsellers, setBestsellers] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null); // 🔍 New state for zoom
 
   useEffect(() => {
     const fetchBestsellers = async () => {
@@ -22,7 +23,6 @@ function BestSellers() {
         console.error("Error fetching bestseller products:", error);
       }
     };
-
     fetchBestsellers();
   }, []);
 
@@ -32,9 +32,14 @@ function BestSellers() {
         OUR BEST SELLERS
         <p>Don't miss out</p>
       </div>
+
       <div className='bestsellers-top-products'>
         {bestsellers.map((product) => (
-          <div className='bestsellers-top-product' key={product.id}>
+          <div
+            className='bestsellers-top-product'
+            key={product.id}
+            onClick={() => setSelectedImage(product.img)} // 📸 Track clicked image
+          >
             <img src={product.img} alt={product.name} />
             <p className='bestsellers-top-product-name'>{product.name}</p>
             <p className='bestsellers-top-product-price'>${product.price}</p>
@@ -42,9 +47,12 @@ function BestSellers() {
         ))}
       </div>
 
-      {/* Future enhancement: 
-      <button className='bestsellers-top-products-shop-now-button'>Shop BestSellers</button> 
-      */}
+      {/* 📸 Image Modal Overlay */}
+      {selectedImage && (
+        <div className="image-modal" onClick={() => setSelectedImage(null)}>
+          <img src={selectedImage} alt="Expanded product" />
+        </div>
+      )}
     </div>
   );
 }

@@ -148,7 +148,6 @@ function Header() {
               to="/women"
               className={location.pathname === "/women" ? "active-link" : ""}
               onClick={() => setIsMenuOpen(false)}
-
             >
               Women
             </Link>
@@ -158,7 +157,6 @@ function Header() {
               to="/men"
               className={location.pathname === "/men" ? "active-link" : ""}
               onClick={() => setIsMenuOpen(false)}
-
             >
               Men
             </Link>
@@ -170,7 +168,6 @@ function Header() {
                 location.pathname === "/allproducts" ? "active-link" : ""
               }
               onClick={() => setIsMenuOpen(false)}
-
             >
               Shop
             </Link>
@@ -180,7 +177,6 @@ function Header() {
               to="/about"
               className={location.pathname === "/about" ? "active-link" : ""}
               onClick={() => setIsMenuOpen(false)}
-
             >
               About
             </Link>
@@ -213,7 +209,7 @@ function Header() {
             )}
           </li>
           <li>
-            <Link to="/cart">
+            <Link to="/cart" onClick={() => setIsMenuOpen(false)}>
               <i className="fa-solid fa-bag-shopping"></i>
             </Link>
           </li>

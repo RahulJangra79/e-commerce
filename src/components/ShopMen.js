@@ -16,6 +16,7 @@ function ShopMen() {
   const [ShopmenProducts, setShopmenProducts] = useState([]);
   const [allMenProducts, setAllMenProducts] = useState([]);
   const [showFilter, setShowFilter] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
   const [filters, setFilters] = useState({
     category: "",
     size: "",
@@ -125,9 +126,7 @@ function ShopMen() {
       filtered = filtered.filter((p) => p.sizes.includes(filters.size));
     }
     if (filters.color) {
-      filtered = filtered.filter((p) =>
-        p.color?.includes(filters.color)
-      );
+      filtered = filtered.filter((p) => p.color?.includes(filters.color));
     }
     if (filters.minPrice) {
       filtered = filtered.filter(
@@ -161,7 +160,10 @@ function ShopMen() {
       <div className="shopmen-heading">MEN'S</div>
 
       <div className="shopmen-filter-sort">
-        <button className="shopmen-filter-left" onClick={() => setShowFilter(true)}>
+        <button
+          className="shopmen-filter-left"
+          onClick={() => setShowFilter(true)}
+        >
           FILTER <i className="fa-solid fa-filter"></i>
         </button>
 
@@ -181,7 +183,12 @@ function ShopMen() {
       <div className="shopmen-products">
         {ShopmenProducts.map((product) => (
           <div className="shopmen-product" key={product.id}>
-            <img src={product.img} alt={product.name} />
+            <img
+              src={product.img}
+              alt={product.name}
+              onClick={() => setSelectedImage(product.img)}
+              style={{ cursor: "zoom-in" }}
+            />
             <div className="shopmen-product-details">
               <p className="shopmen-product-name">{product.name}</p>
               <div className="shopmen-product-details-price-size-cart">
@@ -208,14 +215,21 @@ function ShopMen() {
       {showFilter && (
         <div className="filter-overlay">
           <div className="filter-container">
-            <button className="close-filter" onClick={() => setShowFilter(false)}>
+            <button
+              className="close-filter"
+              onClick={() => setShowFilter(false)}
+            >
               ×
             </button>
             <h2>Product Filters</h2>
             <div className="filter-options">
               <label>
                 Category:
-                <select name="category" value={filters.category} onChange={handleFilterChange}>
+                <select
+                  name="category"
+                  value={filters.category}
+                  onChange={handleFilterChange}
+                >
                   <option value="">All</option>
                   <option value="Clothing">Clothing</option>
                   <option value="Accessories">Accessories</option>
@@ -224,7 +238,11 @@ function ShopMen() {
               </label>
               <label>
                 Size:
-                <select name="size" value={filters.size} onChange={handleFilterChange}>
+                <select
+                  name="size"
+                  value={filters.size}
+                  onChange={handleFilterChange}
+                >
                   <option value="">All</option>
                   <option value="S">S</option>
                   <option value="M">M</option>
@@ -234,7 +252,11 @@ function ShopMen() {
               </label>
               <label>
                 Color:
-                <select name="color" value={filters.color} onChange={handleFilterChange}>
+                <select
+                  name="color"
+                  value={filters.color}
+                  onChange={handleFilterChange}
+                >
                   <option value="">All</option>
                   <option value="White">White</option>
                   <option value="Black">Black</option>
@@ -247,11 +269,21 @@ function ShopMen() {
               </label>
               <label>
                 Min Price:
-                <input type="number" name="minPrice" value={filters.minPrice} onChange={handleFilterChange} />
+                <input
+                  type="number"
+                  name="minPrice"
+                  value={filters.minPrice}
+                  onChange={handleFilterChange}
+                />
               </label>
               <label>
                 Max Price:
-                <input type="number" name="maxPrice" value={filters.maxPrice} onChange={handleFilterChange} />
+                <input
+                  type="number"
+                  name="maxPrice"
+                  value={filters.maxPrice}
+                  onChange={handleFilterChange}
+                />
               </label>
             </div>
             <button className="apply-filters" onClick={applyFilters}>
@@ -261,6 +293,12 @@ function ShopMen() {
               RESET FILTERS
             </button>
           </div>
+        </div>
+      )}
+
+      {selectedImage && (
+        <div className="image-modal" onClick={() => setSelectedImage(null)}>
+          <img src={selectedImage} alt="Zoomed product" />
         </div>
       )}
     </div>

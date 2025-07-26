@@ -3,13 +3,6 @@
     background-color: #fff;
 }
 
-/* .new-arrivals-main {
-    background-color: rgb(238, 236, 235);
-    margin: 50px;
-    border-radius: 20px;
-    padding: 20px;
-} */
-
 .new-arrivals-text {
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
@@ -21,10 +14,9 @@
 
 .new-arrivals-products {
     display: flex;
-    flex-wrap: wrap; /* Makes items wrap on smaller screens */
-    justify-content: center; /* Centers items */
-    gap: 30px; /* Adds spacing between items */
-    /* background-color: rgb(238, 236, 235); */
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 30px; 
     padding: 20px;
 }
 
@@ -34,8 +26,8 @@
     min-width: 250px; /* Ensures layout holds on smaller screens */
     text-align: center; /* Center align product details */
     background: #fff; /* White background for each product */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
-    overflow: hidden; /* Ensures image stays within bounds */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
     transition: transform 0.3s ease-in-out;
 }
 
@@ -146,4 +138,26 @@
         padding: 10px 20px;
     }
 
+}
+
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
 }
