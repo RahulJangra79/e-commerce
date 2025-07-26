@@ -573,3 +573,106 @@
 .modal-actions button:hover {
   background: #0056b3;
 }
+
+
+
+
+
+/* Tablet Screens (768px and below) */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    min-height: auto;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+    position: static;
+  }
+
+  .form-container, 
+  .sign-in-container, 
+  .sign-up-container, 
+  .overlay-container, 
+  .overlay {
+    position: static;
+    width: 100%;
+    height: auto;
+    transform: none !important;
+    z-index: auto;
+    opacity: 1;
+    animation: none;
+  }
+
+  .overlay-panel {
+    width: 100%;
+    padding: 20px;
+    transform: none;
+    position: static;
+	display: none;
+  }
+
+  .login-signup-form {
+    padding: 20px;
+  }
+
+  .login-signup-button {
+    padding: 10px 30px;
+    font-size: 14px;
+  }
+
+  .login__authOption {
+    justify-content: center;
+  }
+
+  .login__authOption > p {
+    margin-left: 10px;
+    font-size: 14px;
+  }
+
+  .login-signup-heading {
+    font-size: 22px;
+  }
+}
+
+/* Mobile Screens (480px and below) */
+@media (max-width: 480px) {
+  .login-signup-main {
+    margin: 0;
+    height: auto;
+    padding: 20px;
+  }
+
+  .login-signup-input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .login__authOption > img {
+    height: 25px;
+  }
+
+  .login-signup-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .modal {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .modal input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .modal-message {
+    font-size: 13px;
+  }
+
+  .modal-actions button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
