@@ -33,6 +33,16 @@ const LoginSignup = () => {
     }
   }, [isRightPanelActive]);
 
+  document.getElementById("to-signup").addEventListener("click", () => {
+    document.querySelector(".container").classList.add("vertical-panel-active");
+  });
+
+  document.getElementById("to-signin").addEventListener("click", () => {
+    document
+      .querySelector(".container")
+      .classList.remove("vertical-panel-active");
+  });
+
   const handleEmailSignup = async (e) => {
     e.preventDefault();
     if (!validateSignup()) return;
@@ -244,6 +254,10 @@ const LoginSignup = () => {
               Sign Up
             </button>
           </form>
+
+          <button type="button" class="toggle-form-btn" id="to-signin">
+            Switch to Sign In
+          </button>
         </div>
 
         {/* Sign In Form */}
@@ -301,6 +315,10 @@ const LoginSignup = () => {
               Sign In
             </button>
           </form>
+
+          <button type="button" class="toggle-form-btn" id="to-signup">
+            Switch to Sign Up
+          </button>
         </div>
 
         {/* Overlay Panel */}

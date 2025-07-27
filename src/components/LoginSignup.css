@@ -676,3 +676,44 @@
     margin: 5px 0;
   }
 }
+
+
+@media (max-width: 768px) {
+  .sign-in-container,
+  .sign-up-container {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    position: relative;
+    transform: none !important;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .vertical-panel-active .sign-in-container {
+    display: none;
+  }
+
+  .vertical-panel-active .sign-up-container {
+    display: block;
+  }
+
+  .container:not(.vertical-panel-active) .sign-up-container {
+    display: none;
+  }
+
+  .container:not(.vertical-panel-active) .sign-in-container {
+    display: block;
+  }
+}
+
+
+.toggle-form-btn {
+  margin-top: 10px;
+  background-color: transparent;
+  color: #007bff;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: underline;
+}

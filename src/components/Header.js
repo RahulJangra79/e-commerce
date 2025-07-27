@@ -10,13 +10,14 @@ import {
   EmailAuthProvider,
 } from "firebase/auth";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const location = useLocation();
   const [currentUser, setCurrentUser] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const navigate = useNavigate();
   const [showChangeModal, setShowChangeModal] = useState(false);
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -120,7 +121,7 @@ function Header() {
 
   return (
     <div className="header-main">
-      <div className="header-logo"></div>
+      <div className="header-logo" onClick={() => navigate("/")}></div>
 
       <div
         className={`hamburger-icon ${isMenuOpen ? "open" : ""}`}
