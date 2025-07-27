@@ -204,7 +204,7 @@ function Header() {
                 )}
               </div>
             ) : (
-              <Link to="/login">
+              <Link to="/login" onClick={() => setIsMenuOpen(false)}>
                 <button className="login-button">Login</button>
               </Link>
             )}
