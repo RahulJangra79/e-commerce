@@ -26,22 +26,50 @@ const LoginSignup = () => {
 
   const navigate = useNavigate();
 
+  // useEffect(() => {
+  //   const container = document.getElementById("container");
+  //   if (container) {
+  //     container.classList.toggle("right-panel-active", isRightPanelActive);
+  //   }
+  // }, [isRightPanelActive]);
+
+  // document.getElementById("to-signup").addEventListener("click", () => {
+  //   document.querySelector(".container").classList.add("vertical-panel-active");
+  // });
+
+  // document.getElementById("to-signin").addEventListener("click", () => {
+  //   document
+  //     .querySelector(".container")
+  //     .classList.remove("vertical-panel-active");
+  // });
+
   useEffect(() => {
-    const container = document.getElementById("container");
-    if (container) {
-      container.classList.toggle("right-panel-active", isRightPanelActive);
+    const toSignupBtn = document.getElementById("to-signup");
+    const toSigninBtn = document.getElementById("to-signin");
+    const container = document.querySelector(".container");
+
+    if (toSignupBtn && container) {
+      toSignupBtn.addEventListener("click", () => {
+        container.classList.add("vertical-panel-active");
+      });
     }
-  }, [isRightPanelActive]);
 
-  document.getElementById("to-signup").addEventListener("click", () => {
-    document.querySelector(".container").classList.add("vertical-panel-active");
-  });
+    if (toSigninBtn && container) {
+      toSigninBtn.addEventListener("click", () => {
+        container.classList.remove("vertical-panel-active");
+      });
+    }
 
-  document.getElementById("to-signin").addEventListener("click", () => {
-    document
-      .querySelector(".container")
-      .classList.remove("vertical-panel-active");
-  });
+    // Cleanup to prevent memory leaks
+    return () => {
+      if (toSignupBtn) {
+        toSignupBtn.removeEventListener("click", () => {});
+      }
+      if (toSigninBtn) {
+        toSigninBtn.removeEventListener("click", () => {});
+      }
+    };
+  }, []);
 
   const handleEmailSignup = async (e) => {
     e.preventDefault();
@@ -255,7 +283,15 @@ const LoginSignup = () => {
             </button>
           </form>
 
-          <button type="button" class="toggle-form-btn" id="to-signin">
+          <button
+            type="button"
+            className="toggle-form-btn"
+            onClick={() => {
+              document
+                .querySelector(".container")
+                ?.classList.remove("vertical-panel-active");
+            }}
+          >
             Switch to Sign In
           </button>
         </div>
@@ -316,7 +352,15 @@ const LoginSignup = () => {
             </button>
           </form>
 
-          <button type="button" class="toggle-form-btn" id="to-signup">
+          <button
+            type="button"
+            className="toggle-form-btn"
+            onClick={() => {
+              document
+                .querySelector(".container")
+                ?.classList.add("vertical-panel-active");
+            }}
+          >
             Switch to Sign Up
           </button>
         </div>

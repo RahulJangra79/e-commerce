@@ -582,11 +582,13 @@
 @media (max-width: 768px) {
   .container {
     width: 100%;
+    max-width: 500px;
     min-height: auto;
     height: auto;
     border-radius: 0;
     box-shadow: none;
     position: static;
+    padding: 20px;
   }
 
   .form-container, 
@@ -687,6 +689,7 @@
     position: relative;
     transform: none !important;
     width: 100%;
+    max-width: 500px;
     z-index: 1;
   }
 
