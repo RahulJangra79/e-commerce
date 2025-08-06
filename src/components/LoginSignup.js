@@ -26,22 +26,14 @@ const LoginSignup = () => {
 
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const container = document.getElementById("container");
-  //   if (container) {
-  //     container.classList.toggle("right-panel-active", isRightPanelActive);
-  //   }
-  // }, [isRightPanelActive]);
+  useEffect(() => {
+    const container = document.getElementById("container");
+    const isDesktop = window.innerWidth >= 768;
 
-  // document.getElementById("to-signup").addEventListener("click", () => {
-  //   document.querySelector(".container").classList.add("vertical-panel-active");
-  // });
-
-  // document.getElementById("to-signin").addEventListener("click", () => {
-  //   document
-  //     .querySelector(".container")
-  //     .classList.remove("vertical-panel-active");
-  // });
+    if (container && isDesktop) {
+      container.classList.toggle("right-panel-active", isRightPanelActive);
+    }
+  }, [isRightPanelActive]);
 
   useEffect(() => {
     const toSignupBtn = document.getElementById("to-signup");
