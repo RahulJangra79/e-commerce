@@ -11,12 +11,13 @@ import {
 } from "firebase/firestore";
 import Swal from "sweetalert2";
 import "./ShopWomen.css";
+import { useNavigate } from "react-router-dom";
 
 function ShopWomen() {
+  const navigate = useNavigate();
   const [shopwomenProducts, setShopwomenProducts] = useState([]);
   const [allWomenProducts, setAllWomenProducts] = useState([]);
   const [showFilter, setShowFilter] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
   const [filters, setFilters] = useState({
     category: "",
     size: "",
@@ -236,8 +237,12 @@ function ShopWomen() {
       <div className="shopwomen-products">
         {shopwomenProducts.map((product) => (
           <div className="shopwomen-product" key={product.id}>
-            <img src={product.img} alt={product.name} onClick={() => setSelectedImage(product.img)}
-              style={{ cursor: "zoom-in" }}/>
+            <img
+              src={product.img}
+              alt={product.name}
+              onClick={() => navigate(`/product/${product.id}`)}
+              style={{ cursor: "zoom-in" }}
+            />
             <div className="shopwomen-product-details">
               <p className="shopwomen-product-name">{product.name}</p>
               <div className="shopwomen-product-details-price-size-cart">
@@ -340,12 +345,6 @@ function ShopWomen() {
               RESET FILTERS
             </button>
           </div>
-        </div>
-      )}
-
-      {selectedImage && (
-        <div className="image-modal" onClick={() => setSelectedImage(null)}>
-          <img src={selectedImage} alt="Zoomed product" />
         </div>
       )}
     </div>

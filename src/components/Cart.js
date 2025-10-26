@@ -109,6 +109,9 @@ const Cart = () => {
               <div className="cart-item-details">
                 <p className="item-name">{item.name}</p>
                 <p className="item-price">${Number(item.price).toFixed(2)}</p>
+                {item.size && (
+                  <p className="item-size">Size: {item.size}</p>
+                )}
               </div>
               <div className="cart-item-quantity">
                 <button onClick={() => handleQuantityChange(item.docId, -1)}>

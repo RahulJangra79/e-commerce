@@ -196,6 +196,7 @@ function Header() {
                 </button>
                 {isDropdownOpen && (
                   <div className="dropdown-menu">
+                    <button onClick={() => navigate(`/my-orders`)}>My Orders</button>
                     <button onClick={() => setShowChangeModal(true)}>
                       Change Password
                     </button>

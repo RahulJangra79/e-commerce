@@ -11,12 +11,13 @@ import {
 } from "firebase/firestore";
 import Swal from "sweetalert2";
 import "./ShopMen.css";
+import { useNavigate } from "react-router-dom";
 
 function ShopMen() {
+  const navigate = useNavigate();
   const [ShopmenProducts, setShopmenProducts] = useState([]);
   const [allMenProducts, setAllMenProducts] = useState([]);
   const [showFilter, setShowFilter] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
   const [filters, setFilters] = useState({
     category: "",
     size: "",
@@ -186,7 +187,7 @@ function ShopMen() {
             <img
               src={product.img}
               alt={product.name}
-              onClick={() => setSelectedImage(product.img)}
+              onClick={() => navigate(`/product/${product.id}`)}
               style={{ cursor: "zoom-in" }}
             />
             <div className="shopmen-product-details">
@@ -293,12 +294,6 @@ function ShopMen() {
               RESET FILTERS
             </button>
           </div>
-        </div>
-      )}
-
-      {selectedImage && (
-        <div className="image-modal" onClick={() => setSelectedImage(null)}>
-          <img src={selectedImage} alt="Zoomed product" />
         </div>
       )}
     </div>

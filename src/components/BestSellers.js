@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './BestSellers.css';
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 function BestSellers() {
   const [bestsellers, setBestsellers] = useState([]);
-  const [selectedImage, setSelectedImage] = useState(null); // 🔍 New state for zoom
+    const navigate = useNavigate();
+
 
   useEffect(() => {
     const fetchBestsellers = async () => {
@@ -38,7 +40,7 @@ function BestSellers() {
           <div
             className='bestsellers-top-product'
             key={product.id}
-            onClick={() => setSelectedImage(product.img)} // 📸 Track clicked image
+            onClick={() => navigate(`/product/${product.id}`)}
           >
             <img src={product.img} alt={product.name} />
             <p className='bestsellers-top-product-name'>{product.name}</p>
@@ -46,13 +48,6 @@ function BestSellers() {
           </div>
         ))}
       </div>
-
-      {/* 📸 Image Modal Overlay */}
-      {selectedImage && (
-        <div className="image-modal" onClick={() => setSelectedImage(null)}>
-          <img src={selectedImage} alt="Expanded product" />
-        </div>
-      )}
     </div>
   );
 }
